@@ -65,15 +65,15 @@ export default function HomePage() {
         <h2 className="text-3xl font-bold text-charcoal mb-6">Customer Reviews</h2>
         <div className="flex flex-wrap justify-center gap-8 max-w-4xl mx-auto">
           <blockquote className="bg-white p-4 shadow-lg rounded-lg text-left max-w-xs">
-            <p className="text-charcoal mb-2">"Best pastries I've ever had! Our café patrons love them!"</p>
+            <p className="text-charcoal mb-2">&quot;Best pastries I&apos;ve ever had! Our café patrons love them!&quot;</p>
             <footer className="text-sm text-gray-500">- Café Owner</footer>
           </blockquote>
           <blockquote className="bg-white p-4 shadow-lg rounded-lg text-left max-w-xs">
-            <p className="text-charcoal mb-2">"The quality and taste are unmatched. Highly recommend!"</p>
+            <p className="text-charcoal mb-2">&quot;The quality and taste are unmatched. Highly recommend!&quot;</p>
             <footer className="text-sm text-gray-500">- Happy Customer</footer>
           </blockquote>
           <blockquote className="bg-white p-4 shadow-lg rounded-lg text-left max-w-xs">
-            <p className="text-charcoal mb-2">"A hit at our last event! Everything was perfect."</p>
+            <p className="text-charcoal mb-2">&quot;A hit at our last event! Everything was perfect.&quot;</p>
             <footer className="text-sm text-gray-500">- Event Organizer</footer>
           </blockquote>
         </div>
