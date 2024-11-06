@@ -1,9 +1,23 @@
 services:
   next-app:
-    build: .
+    build:
+      context: .
+      target: base
     ports:
       - '3000:3000'
     volumes:
       - ./app:/app
       - /app/node_modules
     command: npm run dev
+  
+  # prod:
+  #   build:
+  #     context: .
+  #     target: prod
+  #   ports:
+  #     - '3001:3000'
+  #   volumes:
+  #     - ./app:/app
+  #     - /app/node_modules
+  #     - /app/.next
+  #   command: npx serve out
