@@ -2,7 +2,7 @@
 const nextConfig = {
   output: 'export',
   basePath: '/bakehouse78',
-  assetPrefix: '/bakehouse78',
+  assetPrefix: '/bakehouse78/',
   images: {
     unoptimized: true, // Disables the `next/image` optimization for static export
   },

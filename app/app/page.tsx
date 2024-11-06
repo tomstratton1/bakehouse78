@@ -14,7 +14,6 @@ export default function HomePage() {
         <div className="relative z-10 px-4 flex flex-col items-center px-4">
         <Image
             src="/logo/secondary/monochromeWhite/White-Secondary-Logo.png"
-            // src="/logo/secondary/colour/Secondary-Logo.png"
             alt="Bakehouse 78 Logo"
             width={1000} // Adjust size as needed
             height={300}
