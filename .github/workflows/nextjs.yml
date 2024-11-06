@@ -51,14 +51,22 @@ jobs:
         with:
           path: ./app/out
 
-  # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+
+# Upload to S3 job
+  upload-to-s3:
     runs-on: ubuntu-latest
-    needs: build
+    needs: build  # This job depends on the 'build' job
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up AWS credentials with OIDC
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ secrets.IAMROLE_GITHUB }}
+          role-session-name: GitHub-Action-Role
+          aws-region: eu-west-2
+
+      - name: Upload build artifact to S3
+        run: |
+          aws s3 cp ./app/out/ s3://bakehouse78-deploybuilds/ --recursive --exclude ".git/*" --exclude "node_modules/*"
