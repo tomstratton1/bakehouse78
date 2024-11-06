@@ -9,11 +9,11 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="relative h-screen bg-cover bg-center flex items-center justify-center text-center text-white"
-        style={{ backgroundImage: "url('/bakehouse78/highlights/CAL05625.jpg')" }}>
+        style={{ backgroundImage: "url('/bakehouse78/bakehouse78/highlights/CAL05625.jpg')" }}>
         <div className="absolute inset-0 bg-black opacity-30"></div> {/* Optional overlay */}
         <div className="relative z-10 px-4 flex flex-col items-center px-4">
         <Image
-            src="/logo/secondary/monochromeWhite/White-Secondary-Logo.png"
+            src="/bakehouse78/logo/secondary/monochromeWhite/White-Secondary-Logo.png"
             alt="Bakehouse 78 Logo"
             width={1000} // Adjust size as needed
             height={300}
@@ -48,9 +48,9 @@ export default function HomePage() {
         <h2 className="text-3xl font-bold text-charcoal mb-6">Explore Our Menu</h2>
         <div className="flex flex-wrap justify-center gap-8 mb-8">
           {/* Example product icons - replace src paths with your product images */}
-          <Image src="/bakehouse78/highlights/CAL05783.jpg" alt="Croissants" width={450} height={150} className="rounded-lg shadow-lg" />
-          <Image src="/bakehouse78/highlights/CAL05928.jpg" alt="Bread" width={450} height={150} className="rounded-lg shadow-lg" />
-          <Image src="/bakehouse78/highlights/CAL05591.jpg" alt="Scones" width={450} height={150} className="rounded-lg shadow-lg" />
+          <Image src="/bakehouse78/bakehouse78/highlights/CAL05783.jpg" alt="Croissants" width={450} height={150} className="rounded-lg shadow-lg" />
+          <Image src="/bakehouse78/bakehouse78/highlights/CAL05928.jpg" alt="Bread" width={450} height={150} className="rounded-lg shadow-lg" />
+          <Image src="/bakehouse78/bakehouse78/highlights/CAL05591.jpg" alt="Scones" width={450} height={150} className="rounded-lg shadow-lg" />
         </div>
         <a href="#order">
           <button className="px-8 py-3 bg-teal text-white font-semibold rounded hover:bg-coral transition">
