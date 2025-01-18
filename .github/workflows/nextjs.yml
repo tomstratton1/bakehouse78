@@ -56,7 +56,7 @@ jobs:
         run: ls -al ./.next
 
       - name: Upload artifact for deployment
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: next-build
           path: ${{ github.workspace }}/app/.next
@@ -70,9 +70,10 @@ jobs:
     needs: build  # This job depends on the 'build' job
     steps:
       - name: Download build artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: next-build
+          path: /.next
 
       - name: Set up AWS credentials with OIDC
         uses: aws-actions/configure-aws-credentials@v1
