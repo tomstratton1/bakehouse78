@@ -83,6 +83,9 @@ jobs:
       
       - name: Debug
         run: ls -al
+      
+      - name: Debug
+        run: cd /home/runner/work/bakehouse78/bakehouse78 && ls -al
 
       - name: Upload build artifact to S3
         run: |
