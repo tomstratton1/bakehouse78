@@ -40,6 +40,7 @@ jobs:
           cp -r .next build_artifact/
           cp package.json build_artifact/
           cp -r scripts build_artifact/
+          chmod +x build_artifact/scripts/*.sh  # Set execute permissions
           cp appspec.yml build_artifact/
           cd build_artifact
           zip -r ../build.zip .
