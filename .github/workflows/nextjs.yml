@@ -69,4 +69,4 @@ jobs:
 
       - name: Upload build artifact to S3
         run: |
-          aws s3 cp ./app/out/ s3://bakehouse78-deploybuilds/ --recursive --exclude ".git/*" --exclude "node_modules/*"
+          aws s3 cp ./app/.next s3://bakehouse78-deploybuilds/ --recursive --exclude ".git/*" --exclude "node_modules/*"
