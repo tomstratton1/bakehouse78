@@ -8,14 +8,11 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="relative h-screen bg-cover bg-center flex items-center justify-center text-center text-white"
-        style={{
-          backgroundImage: `url('${process.env.NEXT_PUBLIC_BASE_PATH}/images/sausageroles1.jpg')`
-        }}
-      >
+        style={{ backgroundImage: "url('/bakehouse78/bakehouse78/highlights/CAL05625.jpg')" }}>
         <div className="absolute inset-0 bg-black opacity-30"></div> {/* Optional overlay */}
         <div className="relative z-10 px-4 flex flex-col items-center px-4">
         <Image
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/logo/secondary/monochromeWhite/White-Secondary-Logo.png`}
+            src="/bakehouse78/logo/secondary/monochromeWhite/White-Secondary-Logo.png"
             alt="Bakehouse 78 Logo"
             width={1000} // Adjust size as needed
             height={300}
