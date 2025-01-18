@@ -60,6 +60,7 @@ jobs:
         with:
           name: next-build
           path: ${{ github.workspace }}/app/.next
+          include-hidden-files: true
 
 
 
