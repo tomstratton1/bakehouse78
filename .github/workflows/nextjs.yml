@@ -73,7 +73,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: next-build
-          path: /.next
+          path: /bakehouse
 
       - name: Set up AWS credentials with OIDC
         uses: aws-actions/configure-aws-credentials@v1
@@ -90,4 +90,4 @@ jobs:
 
       - name: Upload build artifact to S3
         run: |
-          aws s3 cp ./.next s3://bakehouse78-deploybuilds/ --recursive --exclude ".git/*" --exclude "node_modules/*"
+          aws s3 cp ./bakehouse s3://bakehouse78-deploybuilds/ --recursive --exclude ".git/*" --exclude "node_modules/*"
