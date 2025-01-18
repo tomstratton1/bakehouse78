@@ -47,10 +47,10 @@ jobs:
       - name: Check out directory exists
         run: ls -al
       - name: Upload artifact for deployment
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-artifact@v3
         with:
-          path: ${{ github.workspace }}/app/.next
           name: next-build
+          path: ./app/.next
 
 
 # Upload to S3 job
