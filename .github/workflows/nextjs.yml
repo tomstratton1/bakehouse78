@@ -1,43 +1,50 @@
-name: Build Bakehouse78 App and Upload to S3
+name: Build and Deploy Bakehouse78 App
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Permissions for GitHub OIDC
 permissions:
   id-token: write
   contents: read
 
 jobs:
-  # Build job
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./app  # Set the working directory to your app directory
+        working-directory: ./app
     steps:
+      # Step 1: Check out the repository
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: List code
-        run: ls -al
-
+      # Step 2: Set up Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
 
+      # Step 3: Install dependencies and build
       - name: Install dependencies
         run: npm install
 
-      - name: Build and export the project
+      - name: Build the project
         run: npm run build
 
+      # Step 4: Prepare the build artifact
+      - name: Prepare build artifact
+        run: |
+          mkdir -p build_artifact
+          cp -r .next build_artifact/
+          cp package.json build_artifact/
+          cp -r scripts build_artifact/
+          cp appspec.yml build_artifact/
+          cd build_artifact
+          zip -r ../build.zip .
+
+      # Step 5: Set up AWS credentials with OIDC
       - name: Set up AWS credentials with OIDC
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -45,6 +52,7 @@ jobs:
           role-session-name: GitHub-Action-Role
           aws-region: eu-west-2
 
+      # Step 6: Upload artifact to S3
       - name: Upload build artifact to S3
         run: |
-          aws s3 cp ./.next s3://bakehouse78-deploybuilds/ --recursive --exclude ".git/*" --exclude "node_modules/*"
+          aws s3 cp build.zip s3://bakehouse78-deploybuilds/build.zip
