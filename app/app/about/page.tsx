@@ -47,7 +47,7 @@ export default function AboutPage() {
         <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-8 max-w-5xl mx-auto px-4">
           <div className="text-left md:text-lg text-charcoal leading-relaxed">
             <p className="text-xl text-charcoal leading-relaxed max-w-3xl mx-auto">
-              From a young age, my passion for baking was evident. Taking a leap of faith, I left my job as a nutritionist to pursue my dream of baking full-time. After gaining industry experience, I transformed my family's study into BakeHouse 78's commercial kitchen. With dedication and my oven, I craft delicious baked goods using local ingredients where possible, aiming to share the joy and love of cooking with individuals and cafes alike.
+              From a young age, my passion for baking was evident. Taking a leap of faith, I left my job as a nutritionist to pursue my dream of baking full-time. After gaining industry experience, I transformed my family&apos;s study into BakeHouse 78&apos;s commercial kitchen. With dedication and my oven, I craft delicious baked goods using local ingredients where possible, aiming to share the joy and love of cooking with individuals and cafes alike.
             </p>
           </div>
         </div>
