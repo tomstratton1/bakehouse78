@@ -38,6 +38,7 @@ jobs:
         run: |
           mkdir -p build_artifact
           cp -r .next build_artifact/
+          cp -r public build_artifact/
           cp package.json build_artifact/
           cp -r scripts build_artifact/
           chmod +x build_artifact/scripts/*.sh  # Set execute permissions
