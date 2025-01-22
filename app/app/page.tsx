@@ -8,7 +8,7 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="relative h-screen bg-cover bg-center flex items-center justify-center text-center text-white"
-        style={{ backgroundImage: "url('images/croissants1.jpg/highlights/CAL05625.jpg')" }}>
+        style={{ backgroundImage: "url('images/croissants1.jpg')" }}>
         <div className="absolute inset-0 bg-black opacity-30"></div> {/* Optional overlay */}
         <div className="relative z-10 px-4 flex flex-col items-center px-4">
         <Image
