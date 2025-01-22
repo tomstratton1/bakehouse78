@@ -58,3 +58,12 @@ jobs:
       - name: Upload build artifact to S3
         run: |
           aws s3 cp build.zip s3://bakehouse78-deploybuilds/build.zip
+
+      # Step 7: Trigger AWS CodeDeploy deployment
+      - name: Trigger AWS CodeDeploy
+        run: |
+          aws deploy create-deployment \
+            --application-name bakehouse78 \
+            --deployment-group-name bakehouse78 \
+            --s3-location bucket=bakehouse78-deploybuilds,key=build.zip,bundleType=zip \
+            --region eu-west-2
