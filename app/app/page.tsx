@@ -47,7 +47,7 @@ export default function HomePage() {
         <h2 className="text-3xl font-bold text-charcoal mb-6">Explore Our Menu</h2>
         <div className="flex flex-wrap justify-center gap-8 mb-8">
           {/* Example product icons - replace src paths with your product images */}
-          <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/croissants1.jpg`} alt="Croissants" width={450} height={150} className="rounded-lg shadow-lg" />
+          <Image src="/images/croissants1.jpg" alt="Croissants" width={450} height={150} className="rounded-lg shadow-lg" />
           <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/bread1.jpg`} alt="Bread" width={450} height={150} className="rounded-lg shadow-lg" />
           <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/scones1.jpg`} alt="Scones" width={450} height={150} className="rounded-lg shadow-lg" />
         </div>
