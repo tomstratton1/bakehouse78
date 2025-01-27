@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Navbar from './components/Navbar';
+import breadPic from '../public/images/bread1.jpg';
 
 export default function HomePage() {
   return (
@@ -48,7 +49,7 @@ export default function HomePage() {
         <div className="flex flex-wrap justify-center gap-8 mb-8">
           {/* Example product icons - replace src paths with your product images */}
           <Image src="/images/croissants1.jpg" alt="Croissants" width={450} height={150} className="rounded-lg shadow-lg" />
-          <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/bread1.jpg`} alt="Bread" width={450} height={150} className="rounded-lg shadow-lg" />
+          <Image src={breadPic} alt="Bread" width={450} height={150} className="rounded-lg shadow-lg" />
           <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/scones1.jpg`} alt="Scones" width={450} height={150} className="rounded-lg shadow-lg" />
         </div>
         <a href="/contact">
