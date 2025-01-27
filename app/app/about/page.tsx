@@ -18,21 +18,21 @@ export default function AboutPage() {
       <section className="py-16 bg-offWhite text-center">
         <div className="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto px-4">
           <Image
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/van1.jpg`}
+            src="./images/van1.jpg"
             alt="The van"
             width={300}
             height={450}
             className="rounded-lg shadow-md"
           />
           <Image
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/oven1.jpg`}
+            src="./images/oven1.jpg"
             alt="The oven"
             width={300}
             height={450}
             className="rounded-lg shadow-md"
           />
           <Image
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/headbaker1.jpg`}
+            src="./images/headbaker1.jpg"
             alt="The head baker"
             width={300}
             height={450}

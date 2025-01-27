@@ -49,28 +49,9 @@ export default function HomePage() {
         <h2 className="text-3xl font-bold text-charcoal mb-6">Explore Our Menu</h2>
         <div className="flex flex-wrap justify-center gap-8 mb-8">
           {/* Example product icons - replace src paths with your product images */}
-          <img
-            src="/images/croissants1.jpg"
-            alt="Croissants test"
-            width="450"
-            height="150"
-            className="rounded-lg shadow-lg"
-          />
-          <img
-            src="./images/bread1.jpg"
-            alt="Bread 2"
-            width="450"
-            height="150"
-            className="rounded-lg shadow-lg"
-          />
-          <img
-            src={`../public/images/scones1.jpg`}
-            alt="Scones"
-            width="450"
-            height="150"
-            className="rounded-lg shadow-lg"
-          />
           <Image src="./images/croissants1.jpg" alt="Croissants" width={450} height={150} className="rounded-lg shadow-lg" />
+          <Image src="./images/bread1.jpg" alt="Bread" width={450} height={150} className="rounded-lg shadow-lg" />
+          <Image src="./images/scones1.jpg" alt="Scones" width={450} height={150} className="rounded-lg shadow-lg" />
         </div>
         <a href="/contact">
           <button className="px-8 py-3 bg-teal text-white font-semibold rounded hover:bg-coral transition">

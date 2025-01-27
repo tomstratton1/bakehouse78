@@ -83,13 +83,13 @@ export default function ContactPage() {
                         <div className="flex justify-center items-center gap-2">
                           <button
                             onClick={() => removeFromCart(item)}
-                            className="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600"
+                            className="bg-sunset text-white px-2 py-1 rounded hover:bg-red-600"
                           >
                             -
                           </button>
                           <button
                             onClick={() => addToCart(item)}
-                            className="bg-green-500 text-white px-2 py-1 rounded hover:bg-green-600"
+                            className="bg-leafyGreen text-white px-2 py-1 rounded hover:bg-green-600"
                           >
                             +
                           </button>
