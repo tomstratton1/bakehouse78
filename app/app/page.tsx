@@ -51,14 +51,14 @@ export default function HomePage() {
           {/* Example product icons - replace src paths with your product images */}
           <img
             src="/images/croissants1.jpg"
-            alt="Croissants"
+            alt="Croissants test"
             width="450"
             height="150"
             className="rounded-lg shadow-lg"
           />
           <img
             src="./images/bread1.jpg"
-            alt="Bread"
+            alt="Bread 2"
             width="450"
             height="150"
             className="rounded-lg shadow-lg"
