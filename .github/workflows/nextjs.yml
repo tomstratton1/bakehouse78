@@ -36,6 +36,7 @@ jobs:
       # Step 4: Prepare the build artifact
       - name: Prepare build artifact
         run: |
+          BUILD_ID=$(date +%Y%m%d%H%M%S)
           mkdir -p build_artifact
           cp -r .next build_artifact/
           cp -r public build_artifact/
@@ -44,7 +45,7 @@ jobs:
           chmod +x build_artifact/scripts/*.sh  # Set execute permissions
           cp appspec.yml build_artifact/
           cd build_artifact
-          zip -r ../build.zip .
+          zip -r ../build-$BUILD_ID.zip .
 
       # Step 5: Set up AWS credentials with OIDC
       - name: Set up AWS credentials with OIDC
@@ -57,13 +58,15 @@ jobs:
       # Step 6: Upload artifact to S3
       - name: Upload build artifact to S3
         run: |
-          aws s3 cp build.zip s3://bakehouse78-deploybuilds/build.zip
+          aws s3 cp build-*.zip s3://bakehouse78-deploybuilds/ --region eu-west-2
 
       # Step 7: Trigger AWS CodeDeploy deployment
       - name: Trigger AWS CodeDeploy
         run: |
+          LATEST_BUILD=$(aws s3 ls s3://bakehouse78-deploybuilds/ | sort | tail -n 1 | awk '{print $4}')
+          echo "Using artifact: $LATEST_BUILD"
           aws deploy create-deployment \
             --application-name bakehouse78 \
             --deployment-group-name bakehouse78 \
-            --s3-location bucket=bakehouse78-deploybuilds,key=build.zip,bundleType=zip \
+            --s3-location bucket=bakehouse78-deploybuilds,key=$LATEST_BUILD,bundleType=zip \
             --region eu-west-2
