@@ -69,4 +69,5 @@ jobs:
             --application-name bakehouse78 \
             --deployment-group-name bakehouse78 \
             --s3-location bucket=bakehouse78-deploybuilds,key=$LATEST_BUILD,bundleType=zip \
+            --file-exists-behavior OVERWRITE \
             --region eu-west-2
