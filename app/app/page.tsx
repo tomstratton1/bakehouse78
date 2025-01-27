@@ -1,4 +1,5 @@
 import Navbar from './components/Navbar';
+import Image from 'next/image';
 
 export default function HomePage() {
   return (
@@ -56,19 +57,20 @@ export default function HomePage() {
             className="rounded-lg shadow-lg"
           />
           <img
-            src="/images/bread1.jpg"
+            src="./images/bread1.jpg"
             alt="Bread"
             width="450"
             height="150"
             className="rounded-lg shadow-lg"
           />
           <img
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/scones1.jpg`}
+            src={`../public/images/scones1.jpg`}
             alt="Scones"
             width="450"
             height="150"
             className="rounded-lg shadow-lg"
           />
+          <Image src="./images/croissants1.jpg" alt="Croissants" width={450} height={150} className="rounded-lg shadow-lg" />
         </div>
         <a href="/contact">
           <button className="px-8 py-3 bg-teal text-white font-semibold rounded hover:bg-coral transition">
