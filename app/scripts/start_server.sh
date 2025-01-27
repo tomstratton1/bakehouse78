@@ -1,10 +1,14 @@
 #!/bin/bash
+# Stop any existing server
+pm2 stop bakehouse78 || true
 
-# Stop any existing Next.js process
-pm2 stop all || true
+# Start the Next.js server using PM2
+cd /var/www/bakehouse78
+pm2 start npm --name "bakehouse78" -- start
 
-# Start the Next.js application
-pm2 start /var/www/bakehouse78 --name "bakehouse78" --time
+# Save the PM2 process list
+pm2 save
+
 
 # Restart Nginx to pick up new configuration
 sudo systemctl restart nginx
