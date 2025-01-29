@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import menuItems from '../data/menuItems';
+import MessageBox from "../components/MessageBox";
 
 // Define the CartItem and MenuCategory interfaces
 interface CartItem {
@@ -57,7 +58,7 @@ export default function ContactPage() {
   return (
     <main>
       <Navbar />
-      <section className="py-16 bg-lightGray text-center">
+      <section className="py-16 bg-offWhite text-center">
         <h1 className="text-5xl font-bold text-charcoal mb-8">Contact Us</h1>
         <h2 className="text-4xl font-bold text-charcoal mb-8">Order Form</h2>
         <div className="flex flex-col items-center">
@@ -103,6 +104,10 @@ export default function ContactPage() {
           ))}
         </div>
       </section>
+
+      {/* Message Box Component - Placed Further Down */}
+      <MessageBox />
+
     </main>
   );
 }
