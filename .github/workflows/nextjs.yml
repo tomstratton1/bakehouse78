@@ -31,7 +31,11 @@ jobs:
         run: npm install
 
       - name: Build the project
-        run: npm run build
+        run: |
+          NODE_ENV="production"
+          AWS_REGION="eu-west-2"
+          SES_TO_EMAIL="tstratton3912@gmail.com"
+          npm run build
 
       # Step 4: Prepare the build artifact
       - name: Prepare build artifact
