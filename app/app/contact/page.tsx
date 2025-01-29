@@ -76,7 +76,7 @@ export default function ContactPage() {
                 <tbody>
                   {category.items.map((item) => (
                     <tr key={item.title} className="text-center">
-                      <td className="px-4 py-2 border">{item.title}</td>
+                      <td className="px-4 py-2 border break-words whitespace-normal">{item.title}</td>
                       <td className="px-4 py-2 border">
                         {cart.find((cartItem) => cartItem.title === item.title)?.quantity || 0}
                       </td>
