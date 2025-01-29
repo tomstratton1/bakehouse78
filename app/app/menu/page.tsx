@@ -14,12 +14,12 @@ export default function MenuPage() {
         {menuItems.map((category, index) => (
           <div key={index} className="mb-12">
             <h2 className="text-4xl font-semibold text-charcoal mb-8">{category.category}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 px-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-12 px-12">
               {category.items.map((item, idx) => (
                 <div key={idx} className="border rounded-lg overflow-hidden shadow-lg">
                   <div className="h-64 bg-gray-300 flex items-center justify-center">
-                    <Image 
-                      src={`/images/${item.image}`} 
+                    <Image
+                      src={`/images/${item.image}`}
                       alt={item.title}
                       width={300}
                       height={450}

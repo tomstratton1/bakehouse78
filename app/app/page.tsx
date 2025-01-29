@@ -8,15 +8,15 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section
-        className="relative h-screen bg-cover bg-center flex items-center justify-center text-center text-white"
+        className="relative h-screen md:h-[60vh] bg-cover bg-center flex items-center justify-center text-center text-white"
         style={{ backgroundImage: "url('/images/croissants1.jpg')" }}
       >
         <div className="absolute inset-0 bg-black opacity-30"></div> {/* Optional overlay */}
-        <div className="relative z-10 px-4 flex flex-col items-center px-4">
+        <div className="relative z-10 px-4 flex flex-col items-center">
           <img
             src="/logo/secondary/monochromeWhite/White-Secondary-Logo.png"
             alt="Bakehouse 78 Logo"
-            width="1000" // Adjust size as needed
+            width="1000"
             height="300"
             className="mb-4"
           />
@@ -36,7 +36,7 @@ export default function HomePage() {
         <h2 className="text-3xl font-bold text-charcoal mb-4">
           Welcome to BakeHouse 78
         </h2>
-        <p className="text-xl text-mintGreen mb-8">
+        <p className="text-xl text-charcoal mb-8">
           Where every baked good is crafted with love and the finest ingredients.
         </p>
         <p className="text-lg text-charcoal">
@@ -47,18 +47,61 @@ export default function HomePage() {
       {/* Call to Action / Product Icons Section */}
       <section className="py-16 bg-offWhite text-center" id="menu">
         <h2 className="text-3xl font-bold text-charcoal mb-6">Explore Our Menu</h2>
-        <div className="flex flex-wrap justify-center gap-8 mb-8">
-          {/* Example product icons - replace src paths with your product images */}
-          <Image src="./images/croissants1.jpg" alt="Croissants" width={450} height={150} className="rounded-lg shadow-lg" />
-          <Image src="./images/bread1.jpg" alt="Bread" width={450} height={150} className="rounded-lg shadow-lg" />
-          <Image src="./images/scones1.jpg" alt="Scones" width={450} height={150} className="rounded-lg shadow-lg" />
+        <div className="flex flex-wrap justify-center gap-8 mb-8 px-2">
+          {/* Croissants */}
+          <div className="relative w-[450px] h-[280px] rounded-lg shadow-lg overflow-hidden">
+            <Image
+              src="/images/choc_croissants1.jpg"
+              alt="Croissants"
+              width={450}
+              height={150}
+              className="object-cover w-full h-full"
+            />
+            <div className="absolute inset-0 bg-black opacity-10"></div> {/* Dark overlay */}
+            <p className="absolute bottom-4 left-0 w-full text-offWhite text-lg font-semibold z-10 text-center">
+              Croissants
+            </p>
+          </div>
+
+          {/* Bread */}
+          <div className="relative w-[450px] h-[280px] rounded-lg shadow-lg overflow-hidden">
+            <Image
+              src="/images/bread1.jpg"
+              alt="Bread"
+              width={450}
+              height={250}
+              className="object-cover w-full h-full"
+            />
+            <div className="absolute inset-0 bg-black opacity-10"></div> {/* Dark overlay */}
+            <p className="absolute bottom-4 left-0 w-full text-offWhite text-lg font-semibold z-10 text-center">
+              Fresh Bread
+            </p>
+          </div>
+
+          {/* Scones */}
+          <div className="relative w-[450px] h-[280px] rounded-lg shadow-lg overflow-hidden">
+            <Image
+              src="/images/scones1.jpg"
+              alt="Scones"
+              width={450}
+              height={250}
+              className="object-cover w-full h-full"
+            />
+            <div className="absolute inset-0 bg-black opacity-0"></div> {/* Dark overlay */}
+            <p className="absolute bottom-4 left-0 w-full text-black text-lg font-semibold z-10 text-center">
+              Scones
+            </p>
+          </div>
         </div>
+
         <a href="/contact">
           <button className="px-8 py-3 bg-teal text-white font-semibold rounded hover:bg-coral transition">
             Contact Us With Your Order
           </button>
         </a>
       </section>
+
+
 
       {/* Customer Reviews Section */}
       <section className="py-16 bg-offWhite text-center">
