@@ -16,14 +16,21 @@ const sesClient = new SESClient({
   }),
 });
 
+// Helper function to get the real IP address
+const getIP = (req: NextRequest) => {
+  return req.headers.get("x-forwarded-for")?.split(",")[0] || "127.0.0.1"; // Default to localhost
+};
+
 // Create rate limiter
 const limiter = rateLimit({
   windowMs: 60 * 60 * 1000, // 1 hour
   max: 5, // Max 5 emails per hour per IP
   message: { error: "Too many emails sent. Please try again later." },
+  keyGenerator: (req: Request) => getIP(req as NextRequest), // Use extracted IP
   standardHeaders: true,
   legacyHeaders: false,
 });
+
 
 // Apply rate limiting
 export async function POST(req: NextRequest) {
