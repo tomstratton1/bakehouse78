@@ -2,12 +2,26 @@
 
 import { useState } from "react";
 
-export default function MessageBox() {
+interface CartItem {
+  title: string;
+  quantity: number;
+}
+
+interface MessageBoxProps {
+  orderSummary: CartItem[];
+}
+
+export default function MessageBox({ orderSummary }: MessageBoxProps) {
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+
+  const formattedOrderSummary = orderSummary
+    .map((item) => `${item.title.replace(/[^a-zA-Z0-9 .,!?()'"-]/g, '')}: ${item.quantity}`)
+    .join("\n") || "No items ordered.";
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -15,11 +29,13 @@ export default function MessageBox() {
     setError(null);
     setSuccess(null);
 
+    const fullMessage = `Message:\n${message}\n\nOrder Summary:\n${formattedOrderSummary}`;
+
     try {
       const response = await fetch("/api/sendMessage", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, message }),
+        body: JSON.stringify({ email, message: fullMessage }),
       });
 
       const data = await response.json();
@@ -56,6 +72,19 @@ export default function MessageBox() {
           placeholder="Type your message here..."
           required
         ></textarea>
+
+        {orderSummary.length > 0 && (
+          <div className="bg-gray-100 p-4 rounded-lg mt-4 text-left">
+            <h3 className="text-xl font-semibold text-charcoal mb-2">Order Summary</h3>
+            <ul className="list-disc pl-5 text-gray-700">
+              {orderSummary.map((item) => (
+                <li key={item.title}>
+                  {item.title}: <strong>{item.quantity}</strong>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         <button
           type="submit"

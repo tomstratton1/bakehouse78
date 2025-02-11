@@ -2,12 +2,12 @@ services:
   app:
     build:
       context: ./app
+    env_file:
+      - .env
     environment:
       NODE_ENV: "development"
       AWS_REGION: "eu-west-2"
-      AWS_ACCESS_KEY: ""
-      AWS_SECRET_ACCESS_KEY: ""
-      SES_FROM_EMAIL: "noreply@bakehouse.co.uk"
+      SES_FROM_EMAIL: "noreply@bakehouse78.co.uk"
       SES_TO_EMAIL: "tstratton3912@gmail.com"
     ports:
       - '3000:3000'
