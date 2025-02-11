@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
+import rateLimit from "express-rate-limit";
 
 // Check if running locally
 const isLocal = process.env.NODE_ENV !== "production";
@@ -15,23 +16,34 @@ const sesClient = new SESClient({
   }),
 });
 
-export async function POST(req: NextRequest) {
-  try {
-    console.log(process.env.AWS_ACCESS_KEY_ID);
-    console.log(process.env.AWS_SECRET_ACCESS_KEY);
+// Create rate limiter
+const limiter = rateLimit({
+  windowMs: 60 * 60 * 1000, // 1 hour
+  max: 5, // Max 5 emails per hour per IP
+  message: { error: "Too many emails sent. Please try again later." },
+  standardHeaders: true,
+  legacyHeaders: false,
+});
 
+// Apply rate limiting
+export async function POST(req: NextRequest) {
+  return new Promise((resolve) => {
+    limiter(req as any, {} as any, () => resolve(handleSendEmail(req)));
+  });
+}
+
+export async function handleSendEmail(req: NextRequest) {
+  try {
     const { email, message } = await req.json();
 
     // Validate input (Only allow text)
-    if (!email || !message || typeof message !== "string" || !message.match(/^[a-zA-Z0-9 .,!?()'"-]+$/)) {
-      return NextResponse.json({ error: "Invalid message format." }, { status: 400 });
+    if (!email || !message || typeof message !== "string" || !message.match(/^[a-zA-Z0-9 .,!?()'"[\]-]+$/m)) {
+      return NextResponse.json({ error: "Invalid message format." }, { status:400 });
     }
 
     // Construct email parameters
     const sourceEmail = process.env.SES_FROM_EMAIL || "";
     const destinationEmail = process.env.SES_TO_EMAIL || "";
-
-    console.log(sourceEmail, destinationEmail);
 
     const params = {
       Source: `"Bakehouse 78" <${sourceEmail}>`, // Adds sender name
@@ -74,11 +86,6 @@ export async function POST(req: NextRequest) {
       },
       ReplyToAddresses: [email], // Ensures replies go to the sender
     };
-
-
-    console.log("SES Client Config:", sesClient.config.credentials);
-    console.log("Email Params:", JSON.stringify(params, null, 2));
-
 
     // Send email using SES
     await sesClient.send(new SendEmailCommand(params));

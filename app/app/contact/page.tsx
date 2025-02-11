@@ -55,6 +55,9 @@ export default function ContactPage() {
     });
   };
 
+  // Filter out items with zero quantity for the Order Summary
+  const nonZeroCartItems = cart.filter((cartItem) => cartItem.quantity > 0);
+
   return (
     <main>
       <Navbar />
@@ -75,7 +78,7 @@ export default function ContactPage() {
                 </thead>
                 <tbody>
                   {category.items.map((item) => (
-                    <tr key={item.title} className="text-center">
+                    <tr key={item.title} className="text-center text-charcoal">
                       <td className="px-4 py-2 border break-words whitespace-normal">{item.title}</td>
                       <td className="px-4 py-2 border">
                         {cart.find((cartItem) => cartItem.title === item.title)?.quantity || 0}
@@ -105,8 +108,8 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Message Box Component - Placed Further Down */}
-      <MessageBox />
+      {/* Message Box Component - Now Includes Order Summary */}
+      <MessageBox orderSummary={nonZeroCartItems} />
 
     </main>
   );
