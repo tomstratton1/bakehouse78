@@ -18,7 +18,7 @@ export default function AboutPage() {
       <section className="py-16 bg-offWhite text-center">
         <div className="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto px-4">
           <Image
-            src="./images/van1.jpg"
+            src="./images/comingsoon.jpg"
             alt="The van"
             width={300}
             height={450}
@@ -32,7 +32,7 @@ export default function AboutPage() {
             className="rounded-lg shadow-md"
           />
           <Image
-            src="./images/headbaker1.jpg"
+            src="./images/comingsoon.jpg"
             alt="The head baker"
             width={300}
             height={450}
@@ -47,11 +47,55 @@ export default function AboutPage() {
         <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-8 max-w-5xl mx-auto px-4">
           <div className="text-left md:text-lg text-charcoal leading-relaxed">
             <p className="text-xl text-charcoal leading-relaxed max-w-3xl mx-auto">
-              From a young age, my passion for baking was evident. Taking a leap of faith, I left my job as a nutritionist to pursue my dream of baking full-time. After gaining industry experience, I transformed my family&apos;s study into BakeHouse 78&apos;s commercial kitchen. With dedication and my oven, I craft delicious baked goods using local ingredients where possible, aiming to share the joy and love of cooking with individuals and cafes alike.
+            Baking has been my passion since childhood, and after working as a nutritionist, I took a leap of faith to turn that passion into a full-time career.
+            Gaining industry experience along the way, I eventually opened my kitchen —a space where creativity and dedication come together.
+            </p>
+            <p className="text-xl text-charcoal leading-relaxed max-w-3xl mx-auto">
+            Today, BakeHouse 78 is fuelled by my love for baking and a commitment to quality.
+            Every treat is crafted with care, using locally sourced ingredients whenever possible.
+            Though our team is small, our mission is big.
+            I believe that every baked good is an opportunity to bring happiness and connection to those who enjoy it.
             </p>
           </div>
         </div>
       </section>
+
+      {/* Stockists */}
+      <section className="py-16 bg-offWhite text-center">
+        <h2 className="text-3xl font-bold text-charcoal mb-8">Stockists</h2>
+        <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-8 max-w-5xl mx-auto px-4">
+          <div className="text-left md:text-lg text-charcoal leading-relaxed">
+            <ul className="list-disc list-inside text-xl text-charcoal max-w-3xl mx-auto">
+              <li>
+                <a href="https://northumberlandhq.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                  Northumberland HQ
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/regularjoscoffee/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                  Regular Jos
+                </a>
+              </li>
+              <li>
+                <a href="https://northumberlandcoffee.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                  Northumberland Coffee
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/littlebrewcoffeeco/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                  Little Brew
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/halcyonhousecafe/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                  Halcyon House Cafe
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
 
       {/* Team Section */}
       <section className="py-16 bg-offWhite text-center">

@@ -21,7 +21,7 @@ export default function HomePage() {
             className="mb-4"
           />
           <p className="text-lg md:text-2xl mb-6">
-            More than just ingredients
+            Happiness is a piece of cake
           </p>
           <a href="/menu">
             <button className="px-8 py-3 bg-teal text-white font-semibold rounded hover:bg-coral transition">
@@ -48,48 +48,43 @@ export default function HomePage() {
       <section className="py-16 bg-offWhite text-center" id="menu">
         <h2 className="text-3xl font-bold text-charcoal mb-6">Explore Our Menu</h2>
         <div className="flex flex-wrap justify-center gap-8 mb-8 px-2">
-          {/* Croissants */}
-          <div className="relative w-[450px] h-[280px] rounded-lg shadow-lg overflow-hidden">
-            <Image
-              src="/images/choc_croissants1.jpg"
-              alt="Croissants"
-              width={450}
-              height={150}
-              className="object-cover w-full h-full"
-            />
-            <div className="absolute inset-0 bg-black opacity-10"></div> {/* Dark overlay */}
-            <p className="absolute bottom-4 left-0 w-full text-offWhite text-lg font-semibold z-10 text-center">
-              Croissants
-            </p>
-          </div>
-
-          {/* Bread */}
           <div className="relative w-[450px] h-[280px] rounded-lg shadow-lg overflow-hidden">
             <Image
               src="/images/bread1.jpg"
-              alt="Bread"
+              alt="Savoury"
               width={450}
               height={250}
               className="object-cover w-full h-full"
             />
             <div className="absolute inset-0 bg-black opacity-10"></div> {/* Dark overlay */}
             <p className="absolute bottom-4 left-0 w-full text-offWhite text-lg font-semibold z-10 text-center">
-              Fresh Bread
+              Savoury
             </p>
           </div>
-
-          {/* Scones */}
           <div className="relative w-[450px] h-[280px] rounded-lg shadow-lg overflow-hidden">
             <Image
               src="/images/scones1.jpg"
-              alt="Scones"
+              alt="Sweet"
               width={450}
               height={250}
               className="object-cover w-full h-full"
             />
             <div className="absolute inset-0 bg-black opacity-0"></div> {/* Dark overlay */}
             <p className="absolute bottom-4 left-0 w-full text-black text-lg font-semibold z-10 text-center">
-              Scones
+              Sweet
+            </p>
+          </div>
+          <div className="relative w-[450px] h-[280px] rounded-lg shadow-lg overflow-hidden">
+            <Image
+              src="/images/choc_croissants1.jpg"
+              alt="Pastry & Other"
+              width={450}
+              height={150}
+              className="object-cover w-full h-full"
+            />
+            <div className="absolute inset-0 bg-black opacity-10"></div> {/* Dark overlay */}
+            <p className="absolute bottom-4 left-0 w-full text-offWhite text-lg font-semibold z-10 text-center">
+              Pastry & Other
             </p>
           </div>
         </div>
