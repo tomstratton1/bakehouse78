@@ -6,7 +6,7 @@ const menuItems = [
         title: 'Focaccia',
         description: 'Indulge in our signature focaccia, freshly baked slabs handmade with care. Enjoy it on its own, as a sandwich base, or paired with your favourite dishes.',
         ingredients: 'Ingredients Placeholder',
-        image: 'images/bread1.jpg',
+        image: 'images-web/focaccia2.jpg',
       },
       {
         title: 'Quiche of the Day',
