@@ -9,7 +9,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section
         className="relative h-screen md:h-[60vh] bg-cover bg-center flex items-center justify-center text-center text-white"
-        style={{ backgroundImage: "url('/images/croissants1.jpg')" }}
+        style={{ backgroundImage: "url('/images-web/almond_croissant1.jpg')" }}
       >
         <div className="absolute inset-0 bg-black opacity-30"></div> {/* Optional overlay */}
         <div className="relative z-10 px-4 flex flex-col items-center">
@@ -50,7 +50,7 @@ export default function HomePage() {
         <div className="flex flex-wrap justify-center gap-8 mb-8 px-2">
           <div className="relative w-[450px] h-[280px] rounded-lg shadow-lg overflow-hidden">
             <Image
-              src="/images/bread1.jpg"
+              src="/images-web/focaccia2.jpg"
               alt="Savoury"
               width={450}
               height={250}
@@ -63,7 +63,7 @@ export default function HomePage() {
           </div>
           <div className="relative w-[450px] h-[280px] rounded-lg shadow-lg overflow-hidden">
             <Image
-              src="/images/scones1.jpg"
+              src="/images-web/scones_tray1.jpg"
               alt="Sweet"
               width={450}
               height={250}
@@ -76,7 +76,7 @@ export default function HomePage() {
           </div>
           <div className="relative w-[450px] h-[280px] rounded-lg shadow-lg overflow-hidden">
             <Image
-              src="/images/choc_croissants1.jpg"
+              src="/images-web/pain_choc2.jpg"
               alt="Pastry & Other"
               width={450}
               height={150}

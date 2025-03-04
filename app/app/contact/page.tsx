@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import menuItems from '../data/menuItems';
 import MessageBox from "../components/MessageBox";
+import Socials from '../components/Socials';
 
 // Define the CartItem and MenuCategory interfaces
 interface CartItem {
@@ -64,29 +65,7 @@ export default function ContactPage() {
       <section className="py-16 bg-offWhite text-center">
         <h1 className="text-5xl font-bold text-charcoal mb-8">Contact Us</h1>
 
-        <h2 className="text-4xl font-bold text-charcoal mb-8">Socials</h2>
-
-        <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-8 max-w-5xl mx-auto px-4">
-          <div className="text-left md:text-lg text-charcoal leading-relaxed">
-            <ul className="list-disc list-inside text-xl text-charcoal max-w-3xl mx-auto">
-              <li>
-                <a href="https://www.instagram.com/bakehouse.78/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                  Instagram @bakehouse.78
-                </a>
-              </li>
-              <li>
-                <a href="https://www.tiktok.com/@bakehouse.78" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                  TikTok @bakehouse.78
-                </a>
-              </li>
-              <li>
-                <a href="https://www.facebook.com/hashtag/bakehouse78" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                  Facebook
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <Socials/>
 
         <h2 className="text-4xl font-bold text-charcoal mb-8">Order Form</h2>
         <div className="flex flex-col items-center">

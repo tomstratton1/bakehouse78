@@ -18,22 +18,22 @@ export default function AboutPage() {
       <section className="py-16 bg-offWhite text-center">
         <div className="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto px-4">
           <Image
-            src="./images/comingsoon.jpg"
-            alt="The van"
+            src="./images-web/prep6.jpg"
+            alt="The head baker"
             width={300}
             height={450}
             className="rounded-lg shadow-md"
           />
           <Image
-            src="./images/oven1.jpg"
+            src="./images-web/oven1.jpg"
             alt="The oven"
             width={300}
             height={450}
             className="rounded-lg shadow-md"
           />
           <Image
-            src="./images/comingsoon.jpg"
-            alt="The head baker"
+            src="./images-web/carrot_slice1.jpg"
+            alt="Carrot Cake"
             width={300}
             height={450}
             className="rounded-lg shadow-md"
@@ -48,10 +48,10 @@ export default function AboutPage() {
           <div className="text-left md:text-lg text-charcoal leading-relaxed">
             <p className="text-xl text-charcoal leading-relaxed max-w-3xl mx-auto">
             Baking has been my passion since childhood, and after working as a nutritionist, I took a leap of faith to turn that passion into a full-time career.
-            Gaining industry experience along the way, I eventually opened my kitchen —a space where creativity and dedication come together.
+            Gaining industry experience along the way, I eventually opened my kitchen - a space where creativity and dedication come together.
             </p>
             <p className="text-xl text-charcoal leading-relaxed max-w-3xl mx-auto">
-            Today, BakeHouse 78 is fuelled by my love for baking and a commitment to quality.
+            <br></br>Today, BakeHouse 78 is fuelled by my love for baking and a commitment to quality.
             Every treat is crafted with care, using locally sourced ingredients whenever possible.
             Though our team is small, our mission is big.
             I believe that every baked good is an opportunity to bring happiness and connection to those who enjoy it.
