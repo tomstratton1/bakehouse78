@@ -67,7 +67,13 @@ export default function ContactPage() {
 
         <Socials/>
 
+        {/* Message Box Component - Includes Order Summary */}
+        <MessageBox orderSummary={nonZeroCartItems} />
+
         <h2 className="text-4xl font-bold text-charcoal mb-8">Order Form</h2>
+        <p className="absolute bottom-4 left-0 w-full text-offWhite text-lg font-semibold z-10 text-center">
+          Use the order forms below to add items to your message. We will be in contact to facilitate your order as soon as possible.
+        </p>
         <div className="flex flex-col items-center">
           {menuItems.map((category: MenuCategory) => (
             <div key={category.category} className="w-full max-w-4xl mb-12">
@@ -111,9 +117,6 @@ export default function ContactPage() {
           ))}
         </div>
       </section>
-
-      {/* Message Box Component - Now Includes Order Summary */}
-      <MessageBox orderSummary={nonZeroCartItems} />
 
     </main>
   );
