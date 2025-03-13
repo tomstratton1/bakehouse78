@@ -72,10 +72,13 @@ export default function ContactPage() {
         <MessageBox orderSummary={nonZeroCartItems} />
 
         <h2 className="text-4xl font-bold text-charcoal mb-8">Order Form</h2>
-        <div className="py-4 mb-16">
-        <p className="absolute left-0 w-full text-charcoal text-lg font-semibold text-center">
-          Use the order forms below to add items to your message. For scones, cookies and sausage rolls please specify the quantities of each flavour in your message. We will be in contact to facilitate your order as soon as possible.
-        </p>
+        <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-8 max-w-5xl mx-auto px-4 mb-8">
+          <div className="text-left md:text-lg text-charcoal leading-relaxed">
+            <p className="text-xl text-charcoal leading-relaxed max-w-3xl mx-auto">
+            Use the order forms below to add items to your message. For scones, cookies and sausage rolls please specify the quantities of each flavour in your message. 
+            We will be in contact to facilitate your order as soon as possible.
+            </p>
+          </div>
         </div>
         <div className="flex flex-col items-center">
           {menuItems.map((category: MenuCategory) => (
