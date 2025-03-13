@@ -19,7 +19,7 @@ export default function MenuPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-12 px-12">
                 {category.items.map((item, idx) => (
                   <div key={idx} className="border rounded-lg overflow-hidden shadow-lg">
-                    <div className="h-64 bg-gray-300 flex items-center justify-center">
+                    <div className="h-72 bg-gray-300 flex items-center justify-center">
                       <Image
                         src={`/${item.image}`}
                         alt={item.title}
@@ -47,7 +47,7 @@ export default function MenuPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-12 px-12">
               {category.items.map((item, idx) => (
                 <div key={idx} className="border rounded-lg overflow-hidden shadow-lg">
-                  <div className="h-64 bg-gray-300 flex items-center justify-center">
+                  <div className="h-72 bg-gray-300 flex items-center justify-center">
                     <Image
                       src={`/${item.image}`}
                       alt={item.title}

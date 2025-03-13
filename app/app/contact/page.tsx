@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import menuItems from '../data/menuItems';
 import MessageBox from "../components/MessageBox";
 import Socials from '../components/Socials';
+import sweetBakes from '../data/sweetBakes';
 
 // Define the CartItem and MenuCategory interfaces
 interface CartItem {
@@ -71,11 +72,55 @@ export default function ContactPage() {
         <MessageBox orderSummary={nonZeroCartItems} />
 
         <h2 className="text-4xl font-bold text-charcoal mb-8">Order Form</h2>
-        <p className="absolute bottom-4 left-0 w-full text-offWhite text-lg font-semibold z-10 text-center">
-          Use the order forms below to add items to your message. We will be in contact to facilitate your order as soon as possible.
+        <div className="py-4 mb-16">
+        <p className="absolute left-0 w-full text-charcoal text-lg font-semibold text-center">
+          Use the order forms below to add items to your message. For scones, cookies and sausage rolls please specify the quantities of each flavour in your message. We will be in contact to facilitate your order as soon as possible.
         </p>
+        </div>
         <div className="flex flex-col items-center">
           {menuItems.map((category: MenuCategory) => (
+            <div key={category.category} className="w-full max-w-4xl mb-12">
+              <h2 className="text-3xl font-semibold text-charcoal mb-4">{category.category}</h2>
+              <table className="table-auto w-full bg-white shadow-lg rounded-lg">
+                <thead>
+                  <tr>
+                    <th className="px-4 py-2 border">Item</th>
+                    <th className="px-4 py-2 border">Quantity</th>
+                    <th className="px-4 py-2 border">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {category.items.map((item) => (
+                    <tr key={item.title} className="text-center text-charcoal">
+                      <td className="px-4 py-2 border break-words whitespace-normal">{item.title}</td>
+                      <td className="px-4 py-2 border">
+                        {cart.find((cartItem) => cartItem.title === item.title)?.quantity || 0}
+                      </td>
+                      <td className="px-4 py-2 border">
+                        <div className="flex justify-center items-center gap-2">
+                          <button
+                            onClick={() => removeFromCart(item)}
+                            className="bg-sunset text-white px-2 py-1 rounded hover:bg-red-600"
+                          >
+                            -
+                          </button>
+                          <button
+                            onClick={() => addToCart(item)}
+                            className="bg-leafyGreen text-white px-2 py-1 rounded hover:bg-green-600"
+                          >
+                            +
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ))}
+        </div>
+        <div className="flex flex-col items-center">
+          {sweetBakes.map((category: MenuCategory) => (
             <div key={category.category} className="w-full max-w-4xl mb-12">
               <h2 className="text-3xl font-semibold text-charcoal mb-4">{category.category}</h2>
               <table className="table-auto w-full bg-white shadow-lg rounded-lg">

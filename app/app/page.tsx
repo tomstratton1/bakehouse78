@@ -33,14 +33,14 @@ export default function HomePage() {
 
       {/* Welcome Section */}
       <section className="py-16 bg-offWhite text-center">
-        <h2 className="text-3xl font-bold text-charcoal mb-4">
+        <h2 className="text-3xl font-bold text-charcoal mb-8">
           Welcome to BakeHouse 78
         </h2>
         <p className="text-xl text-charcoal mb-8">
           Where every baked good is crafted with love and the finest ingredients.
         </p>
-        <p className="text-lg text-charcoal">
-          Supplying cafes, individuals, and events with baked goods.
+        <p className="text-xl text-charcoal">
+          Supplying cafes, individuals, and events with baked goods and catering services.
         </p>
       </section>
 
@@ -63,14 +63,14 @@ export default function HomePage() {
           </div>
           <div className="relative w-[450px] h-[280px] rounded-lg shadow-lg overflow-hidden">
             <Image
-              src="/images-web/scones_tray1.jpg"
+              src="/images-web/red_velvet1.jpg"
               alt="Sweet"
               width={450}
               height={250}
               className="object-cover w-full h-full"
             />
             <div className="absolute inset-0 bg-black opacity-0"></div> {/* Dark overlay */}
-            <p className="absolute bottom-4 left-0 w-full text-black text-lg font-semibold z-10 text-center">
+            <p className="absolute bottom-4 left-0 w-full text-offWhite text-lg font-semibold z-10 text-center">
               Sweet
             </p>
           </div>
