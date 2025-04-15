@@ -107,14 +107,15 @@ export default function HomePage() {
             <p className="text-charcoal mb-2">
               &quot;This is literally the BEST thing I&apos;ve ever eaten in my entire life.&quot;
             </p>
-            <footer className="text-sm text-gray-500">- Happy Customer</footer>
+            <footer className="text-sm text-gray-500">- Beth Hodgson</footer>
           </blockquote>
-          {/* <blockquote className="bg-white p-4 shadow-lg rounded-lg text-left max-w-xs">
+          <blockquote className="bg-white p-4 shadow-lg rounded-lg text-left max-w-xs">
             <p className="text-charcoal mb-2">
-              &quot;A hit at our last event! Everything was perfect.&quot;
+              &quot;Thank you so much for our bakes!! Those pastries de nata were absolutely amazing!!!!
+              I&apos;ll definitely be in touch soon to order again.&quot;
             </p>
-            <footer className="text-sm text-gray-500">- Event Organizer</footer>
-          </blockquote> */}
+            <footer className="text-sm text-gray-500">- NORMAD FLOWER DEN</footer>
+          </blockquote>
         </div>
       </section>
     </main>

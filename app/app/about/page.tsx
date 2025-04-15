@@ -91,6 +91,16 @@ export default function AboutPage() {
                   Halcyon House Cafe
                 </a>
               </li>
+              <li>
+                <a href="https://www.facebook.com/ashbrookehome/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                  AshBrooke Home
+                </a>
+              </li>
+              <li>
+                <a href="https://www.nomadflowerden.co.uk/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                  Nomad Flower Den
+                </a>
+              </li>
             </ul>
           </div>
         </div>

@@ -68,15 +68,13 @@ export default function ContactPage() {
 
         <Socials/>
 
-        {/* Message Box Component - Includes Order Summary */}
-        <MessageBox orderSummary={nonZeroCartItems} />
-
+        
         <h2 className="text-4xl font-bold text-charcoal mb-8">Order Form</h2>
         <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-8 max-w-5xl mx-auto px-4 mb-8">
           <div className="text-left md:text-lg text-charcoal leading-relaxed">
             <p className="text-xl text-charcoal leading-relaxed max-w-3xl mx-auto">
             Use the order forms below to add items to your message. For scones, cookies and sausage rolls please specify the quantities of each flavour in your message. 
-            We will be in contact to facilitate your order as soon as possible.
+            We will be in contact to provide a quote and facilitate your order as soon as possible.
             </p>
           </div>
         </div>
@@ -164,6 +162,10 @@ export default function ContactPage() {
             </div>
           ))}
         </div>
+
+        {/* Message Box Component - Includes Order Summary */}
+        <MessageBox orderSummary={nonZeroCartItems} />
+
       </section>
 
     </main>

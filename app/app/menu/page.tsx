@@ -32,6 +32,9 @@ export default function MenuPage() {
                       <h3 className="text-2xl font-bold mb-2 text-charcoal">{item.title}</h3>
                       <p className="text-gray-700 mb-2">{item.description}</p>
                       {/* <p className="text-gray-500 text-sm mb-4">{item.ingredients}</p> */}
+                      <p className="text-gray-700 text-sm mb-4">
+                      Price: {item.wholesalePrice}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -59,14 +62,15 @@ export default function MenuPage() {
                   <div className="p-4">
                     <h3 className="text-2xl font-bold mb-2 text-charcoal">{item.title}</h3>
                     <p className="text-gray-700 mb-2">{item.description}</p>
-                    {/* <p className="text-gray-500 text-sm mb-4">{item.ingredients}</p> */}
+                    <p className="text-gray-500 text-sm mb-4">
+                      Price: {item.wholesalePrice}
+                    </p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
         ))}
-
       </section>
     </main>
   );
