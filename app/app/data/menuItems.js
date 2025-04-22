@@ -16,9 +16,9 @@ const menuItems = [
         description: 'Our quiches are crafted daily with premium ingredients, offering a perfect blend of flavours and textures.',
         ingredients: 'Ingredients Placeholder',
         image: 'images-wa/quiche.jpeg',
-        wholesalePrice: '£10 (10 portions)',
+        wholesalePrice: '£20 (10 portions)',
         basketUnit: "10 portions",
-        basketPrice: 10
+        basketPrice: 20
       },
       {
         title: 'Goat Cheese Tart',
