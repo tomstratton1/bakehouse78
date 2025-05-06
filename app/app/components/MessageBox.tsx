@@ -61,14 +61,14 @@ export default function MessageBox({ orderSummary }: MessageBoxProps) {
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full p-2 border border-gray-300 rounded-lg focus:ring-teal"
+          className="w-full p-2 border border-gray-300 rounded-lg focus:ring-teal text-black"
           placeholder="Your email (required)"
           required
         />
         <textarea
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="w-full h-32 p-4 border border-gray-300 rounded-lg mt-4 focus:ring-teal"
+          className="w-full h-32 p-4 border border-gray-300 rounded-lg mt-4 focus:ring-teal text-black"
           placeholder="Type your message here..."
           required
         ></textarea>
