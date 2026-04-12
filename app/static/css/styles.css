@@ -1,0 +1,248 @@
+:root {
+  color-scheme: light;
+  color: #222222;
+  background: #f8f4ed;
+  font-family: 'Montserrat', sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+body {
+  background: #f6f1e8;
+  color: #222222;
+  line-height: 1.65;
+}
+a {
+  color: #0d7b77;
+  text-decoration: none;
+}
+a:hover {
+  color: #0a5c5b;
+}
+.site-nav {
+  background: #333333;
+  color: #ffffff;
+  padding: 1rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.nav-logo img {
+  max-height: 55px;
+  width: auto;
+}
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.nav-link {
+  color: #ffffff;
+  font-weight: 600;
+}
+.nav-link:hover {
+  color: #ffe6d5;
+}
+.site-main {
+  min-height: calc(100vh - 120px);
+}
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #ffffff;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem;
+  max-width: 900px;
+}
+.hero-logo {
+  max-width: 360px;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.btn, .link-button {
+  display: inline-block;
+  background: #0d7b77;
+  color: #ffffff;
+  padding: 0.95rem 1.8rem;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.btn:hover, .link-button:hover {
+  background: #0b6463;
+  transform: translateY(-1px);
+}
+.section {
+  padding: 4rem 1.5rem;
+}
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-welcome, .section-explore, .section-reviews {
+  background: #ffffff;
+}
+.section h2,
+.page-title {
+  margin-top: 0;
+}
+.section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+.section p {
+  font-size: 1.05rem;
+  color: #444444;
+}
+.text-center {
+  text-align: center;
+}
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.feature-card,
+.menu-card {
+  background: #ffffff;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+.feature-card img,
+.menu-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.feature-card p,
+.menu-card-body p {
+  margin: 0;
+}
+.feature-card p {
+  padding: 1rem 1rem 1.5rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-align: center;
+}
+.menu-card-body {
+  padding: 1.35rem;
+}
+.menu-card-body h4 {
+  margin: 0 0 0.75rem;
+}
+.price {
+  color: #555555;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+.reviews-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-top: 2rem;
+}
+blockquote {
+  background: #ffffff;
+  padding: 1.8rem;
+  border-radius: 16px;
+  border-left: 6px solid #0d7b77;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.06);
+}
+blockquote footer {
+  margin-top: 1rem;
+  color: #666666;
+  font-size: 0.95rem;
+}
+.content-block {
+  margin-bottom: 2.25rem;
+}
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.image-grid img {
+  width: 100%;
+  border-radius: 18px;
+  height: 320px;
+  object-fit: cover;
+}
+.category-block h3,
+.category-block h2 {
+  margin-bottom: 1rem;
+}
+.link-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.link-list li {
+  margin-bottom: 0.85rem;
+}
+.link-list a {
+  color: #0d7b77;
+}
+.contact-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.page-body p {
+  margin-bottom: 1.4rem;
+}
+.site-footer {
+  background: #333333;
+  color: #ffffff;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .hero {
+    min-height: 60vh;
+  }
+}

@@ -1,0 +1,29 @@
+{{ define "main" }}
+  <section class="section section-page">
+    <div class="section-inner">
+      <h1>Contact</h1>
+      <div class="content-block">
+        <p>Use the contact details below to place your order or ask for a quote. Tell us your preferred delivery or collection date, required quantities, and any special requests.</p>
+        <p>For scones, cookies and sausage rolls, please specify your flavour selections in the message.</p>
+      </div>
+      <div class="contact-grid">
+        <div>
+          <h2>Order by email</h2>
+          <p><a class="link-button" href="mailto:{{ .Site.Params.email }}?subject=Bakehouse%2078%20Order%20Enquiry">{{ .Site.Params.email }}</a></p>
+        </div>
+        <div>
+          <h2>Social</h2>
+          <ul class="link-list">
+            <li><a href="{{ .Site.Params.instagram }}" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="{{ .Site.Params.tiktok }}" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="{{ .Site.Params.facebook }}" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="content-block">
+        <h2>Order Guidance</h2>
+        <p>Use the menu page to see our available sweet and savoury bakes. Add your chosen items to your email message so we can prepare a quote and confirm availability.</p>
+      </div>
+    </div>
+  </section>
+{{ end }}
