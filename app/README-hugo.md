@@ -13,6 +13,16 @@ hugo server -D
 
 3. Open `http://localhost:1313`
 
+## Run in Docker
+
+From the repository root, start the Hugo service:
+
+```bash
+docker compose up hugo
+```
+
+Then open `http://localhost:1313`.
+
 ## Structure
 
 - `config.toml` — site configuration and menu

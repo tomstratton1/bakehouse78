@@ -16,6 +16,17 @@ services:
       - /usr/src/app/node_modules
     command: npm run dev
 
+  hugo:
+    build:
+      context: ./app
+      dockerfile: Dockerfile.hugo
+    ports:
+      - '1313:1313'
+    volumes:
+      - ./app:/usr/src/app
+    environment:
+      - HUGO_DISABLE_FAST_RENDER=1
+
   nginx:
     image: nginx:latest
     volumes:
