@@ -196,6 +196,56 @@ blockquote footer {
   color: var(--text-muted);
   font-size: 0.95rem;
 }
+.section-page {
+  text-align: center;
+}
+.section-page .section-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.section-page .section-inner > h1,
+.section-page .section-inner > h2,
+.section-page .section-inner > h3,
+.section-page .section-inner > p,
+.section-page .section-inner > div {
+  text-align: center;
+}
+.section-page .content-block,
+.section-page .page-body,
+.section-page .category-block {
+  width: 100%;
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section-page .page-body {
+  margin: 0 auto;
+  text-align: center;
+}
+.section-page h1,
+.section-page h2,
+.section-page h3,
+.section-page h4,
+.section-page p,
+.section-page ul,
+.section-page li {
+  text-align: center !important;
+}
+.section-page .content-block p,
+.section-page .content-block h2,
+.section-page .content-block h3,
+.section-page .content-block h4,
+.section-page .content-block ul {
+  text-align: center;
+}
+.section-page .image-grid {
+  width: 100%;
+}
+.section-page .contact-grid {
+  justify-content: center;
+}
 .content-block {
   margin-bottom: 2.25rem;
 }
