@@ -1,0 +1,31 @@
+.site-nav {
+  background: var(--nav);
+  color: #ffffff;
+  padding: 1rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.nav-logo img {
+  max-height: 75px;
+  width: auto;
+}
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.nav-link {
+  color: #ffffff;
+  font-weight: 600;
+}
+.nav-link:hover {
+  color: var(--accent-soft);
+}

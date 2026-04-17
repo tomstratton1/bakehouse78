@@ -3,27 +3,89 @@
     <div class="section-inner">
       <h1>Contact</h1>
       <div class="content-block">
-        <p>Use the contact details below to place your order or ask for a quote. Tell us your preferred delivery or collection date, required quantities, and any special requests.</p>
-        <p>For scones, cookies and sausage rolls, please specify your flavour selections in the message.</p>
+        <p>Build your order below, then submit it to us. We’ll take care of the order and follow up with confirmation.</p>
       </div>
-      <div class="contact-grid">
-        <div>
-          <h2>Order by email</h2>
-          <p><a class="link-button" href="mailto:{{ .Site.Params.email }}?subject=Bakehouse%2078%20Order%20Enquiry">{{ .Site.Params.email }}</a></p>
+
+      <div class="content-block order-table-block">
+        <div class="order-form-fields">
+          <label>
+            Name
+            <input id="customer-name" type="text" placeholder="Your name" />
+          </label>
+          <label>
+            Email
+            <input id="customer-email" type="email" placeholder="you@example.com" />
+          </label>
         </div>
-        <div>
-          <h2>Social</h2>
-          <ul class="link-list">
-            <li><a href="{{ .Site.Params.instagram }}" target="_blank" rel="noopener">Instagram</a></li>
-            <li><a href="{{ .Site.Params.tiktok }}" target="_blank" rel="noopener">TikTok</a></li>
-            <li><a href="{{ .Site.Params.facebook }}" target="_blank" rel="noopener">Facebook</a></li>
-          </ul>
+
+        <table class="order-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Price</th>
+              <th>Qty</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{ range .Site.Data.sweetBakes }}
+              <tr class="category-row"><td colspan="3">{{ .category }}</td></tr>
+              {{ range .items }}
+                <tr>
+                  <td>{{ .title }}</td>
+                  <td class="price">{{ .wholesalePrice }}</td>
+                  <td>
+                    <button class="qty-btn decrease" data-title="{{ .title }}">-</button>
+                    <span class="qty-value" data-title="{{ .title }}">0</span>
+                    <button class="qty-btn increase" data-title="{{ .title }}">+</button>
+                  </td>
+                </tr>
+              {{ end }}
+            {{ end }}
+            {{ range .Site.Data.menuItems }}
+              <tr class="category-row"><td colspan="3">{{ .category }}</td></tr>
+              {{ range .items }}
+                <tr>
+                  <td>{{ .title }}</td>
+                  <td class="price">{{ .wholesalePrice }}</td>
+                  <td>
+                    <button class="qty-btn decrease" data-title="{{ .title }}">-</button>
+                    <span class="qty-value" data-title="{{ .title }}">0</span>
+                    <button class="qty-btn increase" data-title="{{ .title }}">+</button>
+                  </td>
+                </tr>
+              {{ end }}
+            {{ end }}
+          </tbody>
+        </table>
+
+        <div class="order-summary">
+          <span>Order total:</span>
+          <strong id="order-total">£0.00</strong>
         </div>
+
+        <button id="submit-order" class="btn">Submit Order</button>
+        <p class="hint">This sends your order to our team for follow-up. No backend is required yet.</p>
       </div>
+
       <div class="content-block">
-        <h2>Order Guidance</h2>
-        <p>Use the menu page to see our available sweet and savoury bakes. Add your chosen items to your email message so we can prepare a quote and confirm availability.</p>
+        <h2>Get in Touch</h2>
+        <div class="contact-grid">
+          <div>
+            <h3>Order by email</h3>
+            <p><a class="link-button" href="mailto:{{ .Site.Params.email }}?subject=Bakehouse%2078%20Order%20Enquiry">{{ .Site.Params.email }}</a></p>
+          </div>
+          <div>
+            <h3>Social</h3>
+            <ul class="link-list">
+              <li><a href="{{ .Site.Params.instagram }}" target="_blank" rel="noopener">Instagram</a></li>
+              <li><a href="{{ .Site.Params.tiktok }}" target="_blank" rel="noopener">TikTok</a></li>
+              <li><a href="{{ .Site.Params.facebook }}" target="_blank" rel="noopener">Facebook</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
+  <script>window.API_URL = '{{ .Site.Params.apiUrl }}';</script>
+  <script src="/js/contact-order.js"></script>
 {{ end }}

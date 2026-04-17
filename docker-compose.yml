@@ -1,37 +1,12 @@
 services:
-  app:
-    build:
-      context: ./app
-    env_file:
-      - .env
-    environment:
-      NODE_ENV: "development"
-      AWS_REGION: "eu-west-2"
-      SES_FROM_EMAIL: "noreply@bakehouse78.co.uk"
-      SES_TO_EMAIL: "tstratton3912@gmail.com"
-    ports:
-      - '3000:3000'
-    volumes:
-      - ./app:/usr/src/app
-      - /usr/src/app/node_modules
-    command: npm run dev
 
   hugo:
     build:
       context: ./app
-      dockerfile: Dockerfile.hugo
+      dockerfile: Dockerfile
     ports:
       - '1313:1313'
     volumes:
       - ./app:/usr/src/app
     environment:
       - HUGO_DISABLE_FAST_RENDER=1
-
-  nginx:
-    image: nginx:latest
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-    ports:
-      - "80:80"
-    depends_on:
-      - app

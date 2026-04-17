@@ -11,6 +11,7 @@ enableRobotsTXT = true
   instagram = "https://www.instagram.com/bakehouse.78/"
   tiktok = "https://www.tiktok.com/@bakehouse.78"
   facebook = "https://www.facebook.com/hashtag/bakehouse78"
+  apiUrl = "http://localhost:3000/api/order"
 
 [menu]
   [[menu.main]]
