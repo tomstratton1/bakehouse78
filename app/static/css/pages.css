@@ -15,13 +15,20 @@
 .section-page .section-inner > div {
   text-align: center;
 }
-.section-page .content-block,
+.section-page .content-block {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0rem;
+}
 .section-page .page-body,
 .section-page .category-block {
   width: 100%;
-  max-width: 920px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 2rem;
 }
 .section-page .page-body {
   margin: 0 auto;
@@ -50,7 +57,7 @@
   justify-content: center;
 }
 .content-block {
-  margin-bottom: 2.25rem;
+  margin-bottom: 0;
 }
 .image-grid {
   display: grid;
@@ -66,7 +73,8 @@
 }
 .category-block h3,
 .category-block h2 {
-  margin-bottom: 1rem;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 .link-list {
   list-style: none;

@@ -5,7 +5,7 @@
   padding: 0.95rem 1.8rem;
   border-radius: 999px;
   font-weight: 700;
-  letter-spacing: 0.01em;
+  /* letter-spacing: 0.01em; */
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 .btn:hover, .link-button:hover {
@@ -22,14 +22,19 @@
 .section-welcome, .section-explore, .section-reviews {
   background: var(--surface);
 }
-.section h2,
+
 .page-title {
   margin-top: 0;
   color: #1f2b2d;
 }
-.section h2 {
-  font-size: 2.75rem;
-  margin-bottom: 1.25rem;
+h2 {
+  font-size: 2.25rem;
+}
+h1 {
+  font-size: 3.00rem;
+}
+h3 {
+  font-size: 1.75rem;
 }
 .section p {
   font-size: 1.05rem;
@@ -43,6 +48,7 @@
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;
   margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 .feature-card,
 .menu-card {
@@ -86,10 +92,11 @@
   margin-top: 2rem;
 }
 blockquote {
-  background: var(--surface-strong);
+  background: white;
   padding: 1.8rem;
   border-radius: 16px;
-  border-left: 6px solid var(--accent);
+  border-right: 6px solid var(--accent);
+  border-bottom: 6px solid var(--accent);
   box-shadow: 0 18px 35px rgba(31, 43, 45, 0.06);
 }
 blockquote footer {

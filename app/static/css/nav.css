@@ -14,13 +14,14 @@
   margin: 0 auto;
 }
 .nav-logo img {
-  max-height: 75px;
+  max-height: 90px;
   width: auto;
 }
 .nav-links {
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
+  font-size: 1.3rem;
 }
 .nav-link {
   color: #ffffff;

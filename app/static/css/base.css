@@ -2,7 +2,8 @@
   --bg: #f5efe8;
   --surface: #ffffff;
   --surface-strong: #f8f4ed;
-  --text: #272727;
+  /* --text: #272727; */
+  --text: black;
   --text-muted: #5a5a5a;
   --accent: #009393;
   --accent-soft: #f3d98f;
