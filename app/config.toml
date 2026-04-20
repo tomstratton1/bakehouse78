@@ -3,10 +3,12 @@ languageCode = "en-us"
 title = "Bakehouse 78"
 description = "Delicious treats made fresh daily!"
 enableRobotsTXT = true
+relativeURLs = false
+canonifyURLs = true
 
 [params]
-  heroImage = "/images-web/almond_croissant1.jpg"
-  logo = "/logo/secondary/monochromeWhite/White-Secondary-Logo.png"
+  heroImage = "images-web/almond_croissant1.jpg"
+  logo = "logo/secondary/monochromeWhite/White-Secondary-Logo.png"
   email = "hello@bakehouse78.com"
   instagram = "https://www.instagram.com/bakehouse.78/"
   tiktok = "https://www.tiktok.com/@bakehouse.78"
