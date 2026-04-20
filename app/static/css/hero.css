@@ -1,0 +1,32 @@
+.hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #ffffff;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.32);
+}
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem;
+  max-width: 900px;
+}
+.hero-logo {
+  max-width: 550px;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+.hero-subtitle {
+  font-size: 1.55rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+}

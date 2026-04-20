@@ -1,0 +1,36 @@
+baseURL = "https://example.com/"
+languageCode = "en-us"
+title = "Bakehouse 78"
+description = "Delicious treats made fresh daily!"
+enableRobotsTXT = true
+
+[params]
+  heroImage = "/images-web/almond_croissant1.jpg"
+  logo = "/logo/secondary/monochromeWhite/White-Secondary-Logo.png"
+  email = "hello@bakehouse78.com"
+  instagram = "https://www.instagram.com/bakehouse.78/"
+  tiktok = "https://www.tiktok.com/@bakehouse.78"
+  facebook = "https://www.facebook.com/hashtag/bakehouse78"
+  apiUrl = "http://localhost:3000/api/order"
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 2
+  [[menu.main]]
+    identifier = "menu"
+    name = "Menu"
+    url = "/menu/"
+    weight = 3
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/contact/"
+    weight = 4

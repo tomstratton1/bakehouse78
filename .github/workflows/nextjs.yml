@@ -1,77 +1,77 @@
-name: Build and Deploy Bakehouse78 App
+# name: Build and Deploy Bakehouse78 App
 
-on:
-  push:
-    branches: ["main"]
-  workflow_dispatch:
+# on:
+#   push:
+#     branches: ["main"]
+#   workflow_dispatch:
 
-permissions:
-  id-token: write
-  contents: read
+# permissions:
+#   id-token: write
+#   contents: read
 
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./app
-    steps:
-      # Step 1: Check out the repository
-      - name: Checkout code
-        uses: actions/checkout@v4
+# jobs:
+#   build-and-deploy:
+#     runs-on: ubuntu-latest
+#     defaults:
+#       run:
+#         working-directory: ./app
+#     steps:
+#       # Step 1: Check out the repository
+#       - name: Checkout code
+#         uses: actions/checkout@v4
 
-      # Step 2: Set up Node.js
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
+#       # Step 2: Set up Node.js
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: "20"
 
-      # Step 3: Install dependencies and build
-      - name: Install dependencies
-        run: npm install
+#       # Step 3: Install dependencies and build
+#       - name: Install dependencies
+#         run: npm install
 
-      - name: Build the project
-        run: |
-          NODE_ENV="production"
-          AWS_REGION="eu-west-2"
-          SES_TO_EMAIL="tstratton3912@gmail.com"
-          npm run build
+#       - name: Build the project
+#         run: |
+#           NODE_ENV="production"
+#           AWS_REGION="eu-west-2"
+#           SES_TO_EMAIL="tstratton3912@gmail.com"
+#           npm run build
 
-      # Step 4: Prepare the build artifact
-      - name: Prepare build artifact
-        run: |
-          BUILD_ID=$(date +%Y%m%d%H%M%S)
-          mkdir -p build_artifact
-          cp -r .next build_artifact/
-          cp -r public build_artifact/
-          cp package.json build_artifact/
-          cp -r scripts build_artifact/
-          chmod +x build_artifact/scripts/*.sh  # Set execute permissions
-          cp appspec.yml build_artifact/
-          cd build_artifact
-          zip -r ../build-$BUILD_ID.zip .
+#       # Step 4: Prepare the build artifact
+#       - name: Prepare build artifact
+#         run: |
+#           BUILD_ID=$(date +%Y%m%d%H%M%S)
+#           mkdir -p build_artifact
+#           cp -r .next build_artifact/
+#           cp -r public build_artifact/
+#           cp package.json build_artifact/
+#           cp -r scripts build_artifact/
+#           chmod +x build_artifact/scripts/*.sh  # Set execute permissions
+#           cp appspec.yml build_artifact/
+#           cd build_artifact
+#           zip -r ../build-$BUILD_ID.zip .
 
-      # Step 5: Set up AWS credentials with OIDC
-      - name: Set up AWS credentials with OIDC
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: ${{ secrets.IAMROLE_GITHUB }}
-          role-session-name: GitHub-Action-Role
-          aws-region: eu-west-2
+#       # Step 5: Set up AWS credentials with OIDC
+#       - name: Set up AWS credentials with OIDC
+#         uses: aws-actions/configure-aws-credentials@v4
+#         with:
+#           role-to-assume: ${{ secrets.IAMROLE_GITHUB }}
+#           role-session-name: GitHub-Action-Role
+#           aws-region: eu-west-2
 
-      # Step 6: Upload artifact to S3
-      - name: Upload build artifact to S3
-        run: |
-          aws s3 cp build-*.zip s3://bakehouse78-deploybuilds/ --region eu-west-2
+#       # Step 6: Upload artifact to S3
+#       - name: Upload build artifact to S3
+#         run: |
+#           aws s3 cp build-*.zip s3://bakehouse78-deploybuilds/ --region eu-west-2
 
-      # Step 7: Trigger AWS CodeDeploy deployment
-      - name: Trigger AWS CodeDeploy
-        run: |
-          LATEST_BUILD=$(aws s3 ls s3://bakehouse78-deploybuilds/ | sort | tail -n 1 | awk '{print $4}')
-          echo "Using artifact: $LATEST_BUILD"
-          aws deploy create-deployment \
-            --application-name bakehouse78 \
-            --deployment-group-name bakehouse78 \
-            --s3-location bucket=bakehouse78-deploybuilds,key=$LATEST_BUILD,bundleType=zip \
-            --file-exists-behavior OVERWRITE \
-            --region eu-west-2
+#       # Step 7: Trigger AWS CodeDeploy deployment
+#       - name: Trigger AWS CodeDeploy
+#         run: |
+#           LATEST_BUILD=$(aws s3 ls s3://bakehouse78-deploybuilds/ | sort | tail -n 1 | awk '{print $4}')
+#           echo "Using artifact: $LATEST_BUILD"
+#           aws deploy create-deployment \
+#             --application-name bakehouse78 \
+#             --deployment-group-name bakehouse78 \
+#             --s3-location bucket=bakehouse78-deploybuilds,key=$LATEST_BUILD,bundleType=zip \
+#             --file-exists-behavior OVERWRITE \
+#             --region eu-west-2

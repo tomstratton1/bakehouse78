@@ -1,0 +1,58 @@
+{{ define "main" }}
+<main>
+  <section class="hero" style="background-image:url('{{ .Site.Params.heroImage }}');">
+    <div class="hero-overlay"></div>
+    <div class="hero-copy">
+      <img class="hero-logo" src="{{ .Site.Params.logo }}" alt="{{ .Site.Title }} Logo" />
+      <p class="hero-subtitle">Happiness is a piece of cake</p>
+      <a class="btn" href="/menu/">Browse Our Bakes</a>
+    </div>
+  </section>
+
+  <section class="section section-page">
+    <div class="section-inner">
+      <h2>Welcome to BakeHouse 78</h2>
+      <p>Where every baked good is crafted with love and the finest ingredients.</p>
+      <p>Supplying cafes, individuals, and events with baked goods and catering services.</p>
+    </div>
+  </section>
+
+  <section class="section section-explore">
+    <div class="section-inner text-center">
+      <h2>Explore Our Menu</h2>
+      <div class="cards-grid">
+        <article class="feature-card">
+          <img src="/images-web/focaccia2.jpg" alt="Savoury" />
+          <p>Savoury</p>
+        </article>
+        <article class="feature-card">
+          <img src="/images-web/red_velvet1.jpg" alt="Sweet" />
+          <p>Sweet</p>
+        </article>
+        <article class="feature-card">
+          <img src="/images-web/pain_choc2.jpg" alt="Pastry & Other" />
+          <p>Pastry & Other</p>
+        </article>
+      </div>
+      <a class="btn" href="/contact/">Contact Us With Your Order</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-reviews">
+    <div class="section-inner text-center">
+      <h2>Customer Reviews</h2>
+      <div class="reviews-grid">
+        <blockquote>
+          “This is literally the BEST thing I’ve ever eaten in my entire life.”
+          <footer>- Beth Hodgson</footer>
+        </blockquote>
+        <blockquote>
+          “Thank you so much for our bakes!! Those pastries de nata were absolutely amazing!!!! I’ll definitely be in touch soon to order again.”
+          <footer>- NORMAD FLOWER DEN</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+</main>
+{{ end }}

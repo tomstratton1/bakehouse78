@@ -1,0 +1,46 @@
+{{ define "main" }}
+  <section class="section section-page">
+    <div class="section-inner">
+      <h1>Menu</h1>
+      <div class="content-block">
+        <h2>Sweet Bakes</h2>
+        {{ range .Site.Data.sweetBakes }}
+          <div class="category-block">
+            <h3>{{ .category }}</h3>
+            <div class="cards-grid">
+              {{ range .items }}
+                <article class="menu-card">
+                  <img src="/{{ .image }}" alt="{{ .title }}" />
+                  <div class="menu-card-body">
+                    <h4>{{ .title }}</h4>
+                    <p>{{ .description }}</p>
+                    <p class="price">Price: {{ .wholesalePrice }}</p>
+                  </div>
+                </article>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+      </div>
+      <div class="content-block">
+        {{ range .Site.Data.menuItems }}
+          <div class="category-block">
+            <h2>{{ .category }}</h2>
+            <div class="cards-grid">
+              {{ range .items }}
+                <article class="menu-card">
+                  <img src="/{{ .image }}" alt="{{ .title }}" />
+                  <div class="menu-card-body">
+                    <h4>{{ .title }}</h4>
+                    <p>{{ .description }}</p>
+                    <p class="price">Price: {{ .wholesalePrice }}</p>
+                  </div>
+                </article>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}
