@@ -1,0 +1,41 @@
+name: Build and Deploy Bakehouse78 Go App
+
+on:
+  push:
+    branches: ["go-refactor"]
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    defaults:
+      run:
+        working-directory: ./app
+    steps:
+      # Step 1: Check out the repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Set up hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.120.0'
+      # Step 2: Build the project
+      - name: Build the project
+        run: hugo --minify
+      
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        if: github.ref == 'refs/heads/go-refactor'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
