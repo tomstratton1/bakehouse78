@@ -1,0 +1,171 @@
+[
+  {
+    "productId": "focaccia",
+    "category": "Savoury Bakes",
+    "title": "Focaccia",
+    "description": "Indulge in our signature focaccia, freshly baked slabs handmade with care. Enjoy it on its own, as a sandwich base, or paired with your favourite dishes.",
+    "image": "images-web/focaccia2.jpg",
+    "price": {
+      "unitPrice": 2.0,
+      "unit": "slab",
+      "bulkPrice": 16.0,
+      "bulkUnit": "tray"
+    }
+  },
+  {
+    "productId": "quiche-of-the-day",
+    "category": "Savoury Bakes",
+    "title": "Quiche of the Day",
+    "description": "Our quiches are crafted daily with premium ingredients, offering a perfect blend of flavours and textures.",
+    "image": "images-wa/quiche.jpeg",
+    "price": {
+      "unitPrice": 20.0,
+      "unit": "10 portions"
+    }
+  },
+  {
+    "productId": "goat-cheese-tart",
+    "category": "Savoury Bakes",
+    "title": "Goat Cheese Tart",
+    "description": "A delicious tart featuring creamy goat cheese and fresh herbs.",
+    "image": "images-web/goat_cheese_tart1.jpg",
+    "price": {
+      "unitPrice": 3.0
+    }
+  },
+  {
+    "productId": "sweet-potato-black-bean-roll",
+    "category": "Savoury Bakes",
+    "title": "Sweet Potato and Black Bean Roll",
+    "description": "A vegetarian delight packed with sweet potatoes and black beans wrapped in flaky pastry.",
+    "image": "images-web/sweetpot_blackbean1.jpg",
+    "price": {
+      "unitPrice": 2.75
+    }
+  },
+  {
+    "productId": "sausage-rolls",
+    "category": "Savoury Bakes",
+    "title": "Sausage Rolls",
+    "description": "Different options available: Pork and Herb, BBQ Pulled Pork, Pork and Stilton, and Pork, Bacon and Stuffing.",
+    "image": "images-web/sausage_roles_plate2.jpg",
+    "price": {
+      "standardPrice": 3.0,
+      "variantNote": "£2.75 for Pork and Herb"
+    }
+  },
+  {
+    "productId": "salad-of-the-day",
+    "category": "Savoury Bakes",
+    "title": "Salad of the Day",
+    "description": "A fresh, seasonal salad made daily with locally sourced ingredients.",
+    "image": "images-wa/salad.jpeg",
+    "price": {
+      "unitPrice": 4.5,
+      "unit": "box"
+    }
+  },
+  {
+    "productId": "soup-of-the-day",
+    "category": "Savoury Bakes",
+    "title": "Soup of the Day",
+    "description": "Enjoy the comforting warmth of our Soup of the Day, freshly prepared with wholesome ingredients to soothe your senses.",
+    "image": "images-wa/soup_crop.jpeg",
+    "price": {
+      "unitPrice": 10.0,
+      "unit": "litre"
+    }
+  },
+  {
+    "productId": "feta-chilli-honey-knots",
+    "category": "Savoury Bakes",
+    "title": "Feta and Chilli Honey Knots",
+    "description": "Soft, flavourful knots infused with feta cheese and a hint of chilli honey glaze.",
+    "image": "comingsoon.jpg",
+    "price": {
+      "unitPrice": 2.75
+    }
+  },
+  {
+    "productId": "almond-croissant",
+    "category": "Assorted",
+    "title": "Almond Croissant",
+    "description": "A flaky, buttery croissant filled with sweet almond paste.",
+    "image": "images-web/almond_croissant1.jpg",
+    "price": {
+      "unitPrice": 2.3
+    }
+  },
+  {
+    "productId": "chocolate-croissant",
+    "category": "Assorted",
+    "title": "Chocolate Croissant",
+    "description": "A classic pastry with layers of buttery dough and rich chocolate filling.",
+    "image": "images-web/pain_choc1.jpg",
+    "price": {
+      "unitPrice": 2.3
+    }
+  },
+  {
+    "productId": "scones",
+    "category": "Assorted",
+    "title": "Scones",
+    "description": "Multiple options available: Plain, Fruit, Cinnamon & Sultanas (£1.90) Cheese, Cheese and Bacon, Cheese and Chive, and Sundried Tomato and Olive (£2.00).",
+    "image": "images-web/scones_tray1.jpg",
+    "price": {
+      "sweetPrice": 1.9,
+      "savouryPrice": 2.0
+    }
+  },
+  {
+    "productId": "granola-pots",
+    "category": "Assorted",
+    "title": "Granola Pots",
+    "description": "A healthy and delicious granola pot, layered with yogurt and fresh fruit.",
+    "image": "comingsoon.jpg",
+    "price": {
+      "unitPrice": 2.75
+    }
+  },
+  {
+    "productId": "cinnamon-focaccia",
+    "category": "Assorted",
+    "title": "Cinnamon Focaccia",
+    "description": "A sweet take on our signature focaccia, infused with cinnamon and sugar.",
+    "image": "comingsoon.jpg",
+    "price": {
+      "unitPrice": 2.75,
+      "unit": "slab"
+    }
+  },
+  {
+    "productId": "cinnamon-buns-knots",
+    "category": "Assorted",
+    "title": "Cinnamon Buns and Knots",
+    "description": "Soft, fluffy cinnamon buns topped with a sweet glaze.",
+    "image": "images-wa/cinnamon_buns.jpeg",
+    "price": {
+      "unitPrice": 2.5
+    }
+  },
+  {
+    "productId": "pastel-de-nata",
+    "category": "Assorted",
+    "title": "Pastel de Nata",
+    "description": "Portuguese egg custard tart pastries, dusted with cinnamon.",
+    "image": "images-wa/pastal_del_nata.jpeg",
+    "price": {
+      "unitPrice": 2.0
+    }
+  },
+  {
+    "productId": "cookies",
+    "category": "Assorted",
+    "title": "Cookies",
+    "description": "A selection of freshly baked cookies, including Triple Chocolate, Salted Chocolate Chip, and Almond Cookie.",
+    "image": "images-web/cookies1.jpg",
+    "price": {
+      "unitPrice": 1.1
+    }
+  }
+]
