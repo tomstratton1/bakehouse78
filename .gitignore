@@ -128,3 +128,20 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Terraform working directory
+.terraform/
+
+# Local state files
+*.tfstate
+*.tfstate.*
+
+# Crash logs
+crash.log
+
+# CLI config files (sometimes contain sensitive info)
+.terraformrc
+terraform.rc
+
+# Plan files (optional but recommended)
+*.tfplan
