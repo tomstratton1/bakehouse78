@@ -3,44 +3,151 @@
     <div class="section-inner">
       <h1>Menu</h1>
       <div class="content-block">
-        <h2>Sweet Bakes</h2>
-        {{ range .Site.Data.sweetBakes }}
-          <div class="category-block">
-            <h3>{{ .category }}</h3>
-            <div class="cards-grid">
-              {{ range .items }}
-                <article class="menu-card">
-                  <img src="{{ .image | relURL }}" alt="{{ .title }}" />
-                  <div class="menu-card-body">
-                    <h4>{{ .title }}</h4>
-                    <p>{{ .description }}</p>
-                    <p class="price">Price: {{ .wholesalePrice }}</p>
-                  </div>
-                </article>
-              {{ end }}
-            </div>
-          </div>
-        {{ end }}
-      </div>
-      <div class="content-block">
-        {{ range .Site.Data.menuItems }}
-          <div class="category-block">
-            <h2>{{ .category }}</h2>
-            <div class="cards-grid">
-              {{ range .items }}
-                <article class="menu-card">
-                  <img src="{{ .image | relURL }}" alt="{{ .title }}" />
-                  <div class="menu-card-body">
-                    <h4>{{ .title }}</h4>
-                    <p>{{ .description }}</p>
-                    <p class="price">Price: {{ .wholesalePrice }}</p>
-                  </div>
-                </article>
-              {{ end }}
-            </div>
-          </div>
-        {{ end }}
+        <div id="menu-container"></div>
       </div>
     </div>
   </section>
+
+  <script>
+  const API_URL = "https://ju0ssudukc.execute-api.eu-west-2.amazonaws.com/dev/products";
+
+  async function fetchProducts() {
+    const response = await fetch(API_URL);
+
+    if (!response.ok) {
+      throw new Error(`API error: ${response.status}`);
+    }
+
+    return response.json();
+  }
+
+  function groupByCategory(products) {
+    return products.reduce((acc, product) => {
+      const category = product.category || "Other";
+      if (!acc[category]) acc[category] = [];
+      acc[category].push(product);
+      return acc;
+    }, {});
+  }
+
+  function createElement(tag, className, textContent) {
+    const el = document.createElement(tag);
+    if (className) el.className = className;
+    if (textContent) el.textContent = textContent;
+    return el;
+  }
+
+  function formatPrice(price) {
+    if (!price) return "Price: N/A";
+
+    const parts = [];
+
+    if (price.unitPrice != null) {
+      let label = `£${price.unitPrice.toFixed(2)}`;
+
+      if (price.unit) {
+        label += ` per ${price.unit}`;
+      }
+
+      parts.push(label);
+    }
+
+    if (price.bulkPrice != null) {
+      let label = `£${price.bulkPrice.toFixed(2)}`;
+
+      if (price.bulkUnit) {
+        label += ` per ${price.bulkUnit}`;
+      }
+
+      parts.push(label);
+    }
+
+    return parts.join(" | ");
+  }
+
+  function createCard(item) {
+    const card = createElement("article", "menu-card");
+
+    const img = document.createElement("img");
+    const BASE_PATH = "/bakehouse78";
+    img.src = `${BASE_PATH}/${item.image}`;
+    img.alt = item.title;
+
+    const body = createElement("div", "menu-card-body");
+
+    const title = createElement("h4", "menu-card-title", item.title);
+    const desc = createElement("p", "menu-card-description", item.description);
+    const price = createElement(
+      "p",
+      "menu-card-price",
+      `Price: ${formatPrice(item.price)}`
+    );
+
+    body.appendChild(title);
+    body.appendChild(desc);
+    body.appendChild(price);
+
+    card.appendChild(img);
+    card.appendChild(body);
+
+    return card;
+  }
+
+  function renderProducts(products) {
+    const container = document.getElementById("menu-container");
+    container.innerHTML = ""; // clear loading state
+
+    const grouped = groupByCategory(products);
+    const CATEGORY_ORDER = [
+      "Savoury Bakes",
+      "Assorted",
+      "Traybakes",
+      "Loaf Cakes",
+      "Cakes"
+    ];
+
+    CATEGORY_ORDER.forEach(category => {
+      const items = grouped[category];
+      if (!items) return;
+
+      const categoryBlock = createElement("div", "category-block");
+
+      const heading = createElement("h2", null, category);
+      const grid = createElement("div", "cards-grid");
+
+      items.forEach(item => {
+        grid.appendChild(createCard(item));
+      });
+
+      categoryBlock.appendChild(heading);
+      categoryBlock.appendChild(grid);
+      container.appendChild(categoryBlock);
+    });
+  }
+
+  function renderLoading() {
+    const container = document.getElementById("menu-container");
+    container.innerHTML = "<p>Loading menu...</p>";
+  }
+
+  function renderError(error) {
+    const container = document.getElementById("menu-container");
+    container.innerHTML = `<p>Sorry, something went wrong loading the menu.</p>`;
+    console.error(error);
+  }
+
+  async function init() {
+    renderLoading();
+
+    try {
+      const products = await fetchProducts();
+      renderProducts(products);
+    } catch (error) {
+      renderError(error);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", init);
+  </script>
+
 {{ end }}

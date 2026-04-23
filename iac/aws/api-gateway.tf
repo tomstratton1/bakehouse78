@@ -3,7 +3,7 @@ resource "aws_apigatewayv2_api" "api" {
   protocol_type = "HTTP"
 
   cors_configuration {
-    allow_origins = ["https://tomstratton1.github.io"]  # or your domain later
+    allow_origins = ["*"]  # or your domain later
     allow_methods = ["GET"]
     allow_headers = ["*"]
   }
@@ -33,15 +33,15 @@ resource "aws_apigatewayv2_stage" "dev" {
     throttling_burst_limit = 50
     throttling_rate_limit  = 20
   }
-  access_log_settings {
-  destination_arn = aws_cloudwatch_log_group.api_logs.arn
-  format = jsonencode({
-    requestId = "$context.requestId"
-    ip        = "$context.identity.sourceIp"
-    routeKey  = "$context.routeKey"
-    status    = "$context.status"
-  })
-}
+#   access_log_settings {
+#   destination_arn = aws_cloudwatch_log_group.api_logs.arn
+#   format = jsonencode({
+#     requestId = "$context.requestId"
+#     ip        = "$context.identity.sourceIp"
+#     routeKey  = "$context.routeKey"
+#     status    = "$context.status"
+#   })
+# }
 }
 
 resource "aws_lambda_permission" "apigw" {
